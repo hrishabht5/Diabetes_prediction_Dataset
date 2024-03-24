@@ -1,0 +1,40 @@
+18. Suggest improvements in the database schema to reduce data redundancy and
+improve data integrity.
+
+Ans= To reduce data redundancy and improve data integrity in the database schema, you can consider the following improvements:
+
+1.)  Normalization: Normalize the database schema to eliminate redundancy and dependency issues. Break down the data into smaller, related              tables to reduce duplication of data. For example, you could have separate tables for patients, medical conditions, and medical measurements.
+
+2.) Use Foreign Keys: Use foreign keys to establish relationships between tables. For instance, you can have a separate table for medical conditions and link it to the patients table using a foreign key constraint. This ensures referential integrity and reduces data duplication.
+
+3.) Atomic Data: Ensure that each column in a table holds atomic data, meaning it should not be further divisible. This helps to avoid redundancy and update anomalies.
+
+4.) Avoid Storing Calculated Values: Instead of storing calculated values like BMI or derived values like diabetes status directly in the table, calculate them dynamically when needed using SQL queries or views. This ensures data consistency and reduces storage requirements.
+
+5.) Data Validation: Implement data validation rules using constraints like CHECK constraints or triggers to enforce data integrity at the database level. This prevents the insertion of invalid data and ensures consistency.
+
+6.) Indexes: Properly index columns that are frequently used in search or join operations. This improves query performance and helps maintain data integrity by ensuring efficient data retrieval.
+
+
+
+19. Explain how you can optimize the performance of SQL queries on this dataset.
+
+Ans= Optimizing the performance of SQL queries on a dataset involves various strategies aimed at reducing query execution time and improving overall database efficiency. Here are some ways to optimize SQL queries on your dataset:
+
+1.) Use Indexes: Properly index the columns that are frequently used in WHERE clauses, JOIN conditions, and ORDER BY clauses. Indexes help speed up data retrieval by allowing the database engine to quickly locate the rows that satisfy the conditions specified in the query.
+
+2.) **Avoid SELECT ***: Instead of selecting all columns using SELECT *, explicitly list only the columns that are required for the query. This reduces the amount of data the database needs to read from disk and can significantly improve query performance, especially for tables with many columns or large datasets.
+
+3.)Optimize JOINs: Ensure that JOIN operations are optimized by using appropriate join algorithms (e.g., nested loops, hash joins, merge joins) and join order. Use EXPLAIN or equivalent tools to analyze query execution plans and identify opportunities for optimization, such as adding missing indexes or restructuring the query.
+
+4.) Limit Result Sets: Use the LIMIT clause to restrict the number of rows returned by the query, especially when fetching large result sets. This reduces the amount of data transferred over the network and can improve query response times.
+
+5.)Optimize WHERE Clauses: Ensure that WHERE clauses are selective by using indexed columns and avoiding functions or calculations on indexed columns. This allows the database engine to efficiently narrow down the search space and retrieve relevant rows more quickly.
+
+6.) Use Query Cache: Enable query caching if supported by your database system. Query caching can cache the results of frequently executed queries, reducing the need for repeated query execution and improving overall performance.
+
+
+
+
+
+
